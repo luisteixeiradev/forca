@@ -1,0 +1,37 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: grey;
+    height: 100%;
+    margin: 0;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    justify-items: center;
+    height: 100%;
+}
+
+.left {
+    display: flex;
+    align-self: center;
+}
+
+.right {
+    display: flex;
+    align-self: center;
+}
+
+.leftImage {
+    width: auto;
+    height: 40px;
+}
+
+.rightImage {
+    width: auto;
+    height: 40px;
+}
