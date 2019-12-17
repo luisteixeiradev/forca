@@ -35,3 +35,16 @@ body {
     width: auto;
     height: 40px;
 }
+
+.forca {
+    padding-top: 60px;
+    width: auto;
+    height: 120px;
+    align-content: center;
+}
+
+.pcWord {
+    padding-top: 60px;
+    text-align: center;
+    font-size: 25px;
+}
