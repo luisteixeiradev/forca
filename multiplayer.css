@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-
+/* Criação Grelha para Jogo */
 .grid {
     display: grid;
     grid-template-columns: 25% 50% 25%;
@@ -16,36 +16,43 @@ body {
     height: 100%;
 }
 
+/* Posição HUD jogador */
 .left {
     display: flex;
     align-self: center;
 }
 
+/* Posição HUD jogador */
 .right {
     display: flex;
     align-self: center;
 }
 
+/* Tamanho HUD jogador */
 .leftImage {
     width: auto;
     height: 100px;
 }
 
+/* Tamanho HUD jogador */
 .rightImage {
     width: auto;
     height: 100px;
 }
 
+/* Posição e tamanho da forca */
 .forca {
     padding-top: 60px;
     width: auto;
     height: 120px;
 }
 
+/* Centrar forca */
 .forcaCentro {
     text-align: center;
 }
 
+/* Posicionamento da palavra escolhida pelo PC */
 .pcWord {
     padding-top: 60px;
     text-align: center;

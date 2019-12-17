@@ -1,13 +1,31 @@
+// Palavras PC
 const words = [
-    "cao", "gato", "macaco"
+    {
+        category: 'animais',
+        items: ['cao', 'macaco', 'rato']
+    },
+    {
+        category: 'paises',
+        items: ['portugal', 'espanha']
+    }
 ]
 
-//document.getElementById("pcWord").innerHTML = words[Math.floor(Math.random() * words.length)]
+for (const cat of words) {
+    if (cat.category) {
+        let categoryObject = words[Math.floor(Math.random() * words.length)]
+        console.log([cat]);
+    }
+}
 
-let word = words[Math.floor(Math.random() * words.length)].split("")
 
-for (let i = 0; i < word.length; i++) {
+
+// Selecionar Objeto
+/* let categoryObject = words[Math.floor(Math.random() * words.length)] */
+
+
+
+/* for (let i = 0; i < word.length; i++) {
     document.getElementById("pcWord").innerHTML += `_ &nbsp`
     console.log(word[i]);
-    
-}
+
+} */
