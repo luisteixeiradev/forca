@@ -57,4 +57,10 @@ body {
     padding-top: 60px;
     text-align: center;
     font-size: 25px;
+    align-content: center;
+}
+
+.category{
+    text-align: center;
+    align-content: center;
 }

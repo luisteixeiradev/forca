@@ -14,7 +14,14 @@ let categoryObject = words[Math.floor(Math.random() * words.length)]
 
 console.log(categoryObject);
 
-document.getElementById("word").innerHTML = categoryObject.category
+let word = categoryObject.items[Math.floor(Math.random() * categoryObject.items.length)]
+
+document.getElementById("category").innerHTML = categoryObject.category
+
+for (let i = 0; i < word.length; i++) {
+    document.getElementById("pcWord").innerHTML += `_ &nbsp`
+    console.log(word[i]);
+}
 
 
 
