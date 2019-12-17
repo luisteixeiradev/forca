@@ -10,12 +10,12 @@ const words = [
     }
 ]
 
-for (const cat of words) {
-    if (cat.category) {
-        let categoryObject = words[Math.floor(Math.random() * words.length)]
-        console.log([cat]);
-    }
-}
+let categoryObject = words[Math.floor(Math.random() * words.length)]
+
+console.log(categoryObject);
+
+document.getElementById("word").innerHTML = categoryObject.category
+
 
 
 
