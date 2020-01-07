@@ -23,6 +23,14 @@ for (let i = 0; i < word.length; i++) {
     console.log(word[i]);
 }
 
+/*imagem forca*/
+
+let contForca = 0
+
+document.querySelector(".forca").src=`img/f${contForca}.png`
+
+
+
 //teclado
 const letters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 for (let i = 0; i < letters.length; i++) {
