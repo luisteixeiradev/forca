@@ -128,5 +128,5 @@
 
  function letterZ() {
     document.getElementById("letterZ").disabled = true;
-    letterAttempt.push('X');
+    letterAttempt.push('Z');
  }
