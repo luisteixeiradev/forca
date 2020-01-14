@@ -35,13 +35,6 @@ document.querySelector(".forca").src=`img/f${contForca}.png`
 // Função para tentativas de letras do utilizador
 let letterAttempt = []
 
-/*function letterAttemptDisabled () {
-
-for (let i = 0; i < letterAttempt.length; i++) {
-    document.querySelector(`#letter${letterAttempt[i].toUpperCase()}`).disabled = 'true'
-}
-}*/
-
 // Jogadores
 let pName1
 let pName2
@@ -51,5 +44,3 @@ document.querySelector(".rightP").innerHTML= pName2
 
 // Chamar funções
 randomWordAndCategory();
-letterAttemptDisabled();
-

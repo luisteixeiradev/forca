@@ -1,14 +1,11 @@
  function letterA() {
     document.getElementById("letterA").disabled = true;
     letterAttempt.push('A');
-    console.log(letterAttempt);
-
  }
 
  function letterB() {
     document.getElementById("letterB").disabled = true;
     letterAttempt.push('B');
-    console.log(letterAttempt);
  }
 
  function letterC() {
