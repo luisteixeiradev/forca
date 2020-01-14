@@ -13,8 +13,13 @@ const words = [
 // Teclado
 const letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 for (let i = 0; i < letters.length; i++) {
-    document.getElementsByClassName('keyboard')[0].innerHTML += `<button class="bLetters" id="letter${letters[i]}" onclick="letter${letters[i]}()">${letters[i]}</button>`
+    document.getElementsByClassName('keyboard')[0].innerHTML += `<button class="bLetters" id="letter${letters[i]}" onclick="useLetter('${letters[i]}')">${letters[i]}</button>`
 };
+
+function useLetter(letter) {
+    document.getElementById(`letter${letter}`).disabled = true;
+    letterAttempt.push({letter});
+ }
 
 // Função para escolher a palavra
 function randomWordAndCategory () {
