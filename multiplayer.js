@@ -22,6 +22,9 @@ function useLetter(letter) {
  }
 
 // Função para escolher a palavra
+
+let wordVisual = []
+
 function randomWordAndCategory () {
 
 let categoryObject = words[Math.floor(Math.random() * words.length)]
@@ -29,9 +32,25 @@ let word = categoryObject.items[Math.floor(Math.random() * categoryObject.items.
 document.getElementById("category").innerHTML = categoryObject.category.toUpperCase()
 
 for (let i = 0; i < word.length; i++) {
-    document.getElementById("pcWord").innerHTML += `&nbsp_&nbsp`
+    /*document.getElementById("pcWord").innerHTML += `&nbsp_&nbsp`*/
+    wordVisual.push(`&nbsp_&nbsp`)
 }
-};
+
+for (let i = 0; i < wordVisual.length; i++) {
+    
+    document.getElementById("pcWord").innerHTML += wordVisual[i]
+
+}
+}
+
+for (let i = 0; i < wordVisual.length; i++) {
+    
+    document.getElementById("pcWord").innerHTML += wordVisual[i]
+
+}
+
+console.log(wordVisual);
+
 
 // Imagem da forca
 let contForca = 0
@@ -48,4 +67,4 @@ document.querySelector(".leftP").innerHTML= pName1
 document.querySelector(".rightP").innerHTML= pName2
 
 // Chamar funções
-randomWordAndCategory();
+randomWordAndCategory()
