@@ -43,12 +43,6 @@ for (let i = 0; i < wordVisual.length; i++) {
 }
 }
 
-for (let i = 0; i < wordVisual.length; i++) {
-    
-    document.getElementById("pcWord").innerHTML += wordVisual[i]
-
-}
-
 console.log(wordVisual);
 
 
