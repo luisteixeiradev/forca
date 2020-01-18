@@ -21,18 +21,40 @@ function useLetter(letter) {
         letter
     });
     console.log(word);
+    /*console.log(letterAttempt);*/
 
-    for (let i = 0; i < word.length; i++) {
-        if (word.includes({
-                letter
-            })) {
-            console.log(letter);
-
+    
+    if (word.includes(letter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (letter === word[i]) {
+                wordVisual.push(letter)
+                console.log(wordVisual)
+                visualWordF()
+                console.log(wordVisual)
+            }
         }
+    } else {
+        contForca = contForca + 1
+        document.querySelector(".forca").src = `img/f${contForca}.png`
+    }
+
+    /*for (let i = 0; i < word.length; i++) {
+        if (letter === word[i]) {
+            wordVisual.push(letter)
+            console.log(letter);
+            visualWord()
+        } else {
+            contForca = contForca + 1
+            document.querySelector(".forca").src = `img/f${contForca}.png`
+        }
+    }*/
+
+    if (contForca === 6) {
+        alert("O jogo terminou")
     }
 }
 
-let word = []
+let word =[]
 
 // Função para escolher a palavra
 let wordVisual = []
@@ -40,7 +62,7 @@ let wordVisual = []
 function randomWordAndCategory() {
 
     let categoryObject = words[Math.floor(Math.random() * words.length)]
-    word = categoryObject.items[Math.floor(Math.random() * categoryObject.items.length)].toUpperCase()
+    word = categoryObject.items[Math.floor(Math.random() * categoryObject.items.length)].toUpperCase().split("")
     document.getElementById("category").innerHTML = categoryObject.category.toUpperCase()
     console.log(typeof word);
 
@@ -51,6 +73,7 @@ function randomWordAndCategory() {
     for (let i = 0; i < wordVisual.length; i++) {
         document.getElementById("pcWord").innerHTML += wordVisual[i]
     }
+console.log(word);
 
 }
 
@@ -70,3 +93,9 @@ document.querySelector(".rightP").innerHTML = pName2
 
 // Chamar funções
 randomWordAndCategory()
+
+function wordVisualF() {
+    for (let i = 0; i < wordVisual.length; i++) {
+        document.getElementById("pcWord").innerHTML += wordVisual[i]
+    }
+}
