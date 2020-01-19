@@ -133,9 +133,9 @@ body {
       display: none;
   }
 
-  /*#modalGameOver > .modal-content {
-      
-  }*/
+  #modalGameOver > .modal-content{
+    font-size: xxx-large;
+  }
 
   /* Modal Content */
   .modal-content {
@@ -184,5 +184,11 @@ body {
     font-family: 'Exo', sans-serif;
     color: white;
   }
+
+  .btnInputNames:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
 
 /*Fim Modal*/
