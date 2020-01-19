@@ -50,7 +50,7 @@ function useLetter(letter) {
     }*/
 
     if (contForca === 6) {
-        alert("O jogo terminou")
+        document.querySelector("#modalGameOver").style.display = "block"
     }
 }
 
@@ -92,7 +92,7 @@ function jogar() {
     if (document.querySelector('#inputName1').value === "" || document.querySelector('#inputName2').value === "") {
         alert("Preencher o nome dos 2 jogadores")
     } else {
-        document.querySelector(".modal").style.display = "none"
+        document.querySelector("#modalNomes").style.display = "none"
         pName1 = document.querySelector("#inputName1").value
         pName2 = document.querySelector("#inputName2").value
         document.querySelector(".leftP").innerHTML = pName1

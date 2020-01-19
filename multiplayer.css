@@ -112,7 +112,7 @@ body {
 /*Modal*/
 /* The Modal (background) */
 .modal {
-    display: block; /* Hidden by default */
+    /*display: block;*/ /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -125,6 +125,18 @@ body {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
+  #modalNomes{
+      display: block;
+  }
+
+  #modalGameOver{
+      display: none;
+  }
+
+  /*#modalGameOver > .modal-content {
+      
+  }*/
+
   /* Modal Content */
   .modal-content {
     background-color: #b27214;
@@ -172,6 +184,5 @@ body {
     font-family: 'Exo', sans-serif;
     color: white;
   }
-
 
 /*Fim Modal*/
