@@ -108,3 +108,70 @@ body {
     margin-right: 12.5px;
     transition: 0.5s ease-in-out;
 }
+
+/*Modal*/
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #b27214;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #fff;
+    width: 50%;
+    border-radius: 20px;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .namePlayers{
+    padding: 10px;
+  }
+
+  .inputNames{
+      border-radius: 7.5px;
+      /*height: 30px;*/
+      margin-left: 20px;
+      padding: 10px;
+      font-family: 'Exo', sans-serif;
+      background-color: #b27214;
+      border: 5px solid #f7b239;
+      color: #fff;
+      
+  }
+
+
+  .btnInputNames{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+  }
+
+
+/*Fim Modal*/

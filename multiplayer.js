@@ -88,14 +88,31 @@ let letterAttempt = []
 let pName1
 let pName2
 
-document.querySelector(".leftP").innerHTML = pName1
-document.querySelector(".rightP").innerHTML = pName2
+function jogar() {
+    if (document.querySelector('#inputName1').value === "" || document.querySelector('#inputName2').value === "") {
+        alert("Preencher o nome dos 2 jogadores")
+    } else {
+        document.querySelector(".modal").style.display = "none"
+        pName1 = document.querySelector("#inputName1").value
+        pName2 = document.querySelector("#inputName2").value
+        document.querySelector(".leftP").innerHTML = pName1
+        document.querySelector(".rightP").innerHTML = pName2
+    }
+}
+
+/*document.querySelector(".leftP").innerHTML = pName1
+document.querySelector(".rightP").innerHTML = pName2*/
 
 // Chamar funções
 randomWordAndCategory()
+document.querySelector(".btnInputNames").addEventListener("click", jogar);
 
 function wordVisualF() {
     for (let i = 0; i < wordVisual.length; i++) {
         document.getElementById("pcWord").innerHTML += wordVisual[i]
     }
 }
+
+/*Modal*/
+
+/*Fim Modal*/
