@@ -1,11 +1,11 @@
 // Palavras PC
 const words = [{
-        category: 'animais',
-        items: ['cao', 'macaco', 'rato']
+        category: 'frameworks',
+        items: ['ionic', 'angular', 'react']
     },
     {
-        category: 'países',
-        items: ['portugal', 'espanha']
+        category: 'linguagens',
+        items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'typescript', 'euphoria', 'lua', 'asp', 'matlab', 'rubi']
     }
 ]
 
@@ -15,36 +15,10 @@ for (let i = 0; i < letters.length; i++) {
     document.getElementsByClassName('keyboard')[0].innerHTML += `<button class="bLetters" id="letter${letters[i]}" onclick="useLetter('${letters[i]}')">${letters[i]}</button>`
 };
 
-function useLetter(letter) {
-    document.getElementById(`letter${letter}`).disabled = true;
-    letterAttempt.push({
-        letter
-    });
-    console.log(word);
-    console.log(word.includes(letter) === true);
-    
-    if (word.includes(letter)) {
-        for (let i = 0; i < word.length; i++) {
-            if (letter === word[i]) {
-                wordVisual[i] = letter
-                wordVisualF()
-            }
-        }
-    } else {
-        contForca = contForca + 1
-        document.querySelector(".forca").src = `img/f${contForca}.png`
-    }
-    
-    if (contForca === 6) {
-        document.querySelector("#modalGameOver").style.display = "block"
-    }
-}
-
-let word =[]
-
-// Função para escolher a palavra
+let word = []
 let wordVisual = []
 
+// Função para escolher a palavra
 function randomWordAndCategory() {
 
     let categoryObject = words[Math.floor(Math.random() * words.length)]
@@ -59,26 +33,49 @@ function randomWordAndCategory() {
     for (let i = 0; i < wordVisual.length; i++) {
         document.getElementById("pcWord").innerHTML += wordVisual[i]
     }
-console.log(word);
-console.log(wordVisual);
+}
+randomWordAndCategory()
 
+// Tentativa de letra; Troca letra(_ _) por letra(A.ex) ou adiciona parte da forca
+function useLetter(letter) {
+    document.getElementById(`letter${letter}`).disabled = true;
 
+    if (word.includes(letter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (letter === word[i]) {
+                wordVisual[i] = letter
+                wordVisualF()
+            }
+        }
+    } else {
+        contForca = contForca + 1
+        document.querySelector(".forca").src = `img/f${contForca}.png`
+    }
+
+    if (contForca === 6) {
+        document.querySelector("#modalGameOver").style.display = "block"
+    }
+}
+
+// Substitui letra tentada por visualWord
+function wordVisualF() {
+    console.log(wordVisual);
+    for (let i = 0; i < 1; i++) {
+        document.getElementById("pcWord").innerHTML = wordVisual[i]
+    }
+    for (let i = 1; i < wordVisual.length; i++) {
+        document.getElementById("pcWord").innerHTML += wordVisual[i]
+    }
 }
 
 // Imagem da forca
 let contForca = 0
 document.querySelector(".forca").src = `img/f${contForca}.png`
 
-// Função para tentativas de letras do utilizador
-let letterAttempt = []
-
-// Jogadores
-let pName1
-let pName2
-
+// Função escolher nomes dos jogadores
 function jogar() {
     if (document.querySelector('#inputName1').value === "" || document.querySelector('#inputName2').value === "") {
-        alert("Preencher o nome dos 2 jogadores")
+        alert("Por Favor Escolhe o Teu Nome!")
     } else {
         document.querySelector("#modalNomes").style.display = "none"
         pName1 = document.querySelector("#inputName1").value
@@ -87,24 +84,8 @@ function jogar() {
         document.querySelector(".rightP").innerHTML = pName2
     }
 }
-
-/*document.querySelector(".leftP").innerHTML = pName1
-document.querySelector(".rightP").innerHTML = pName2*/
-
-// Chamar funções
-randomWordAndCategory()
 document.querySelector(".btnInputNames").addEventListener("click", jogar);
 
-function wordVisualF() {
-    console.log(wordVisual);
-    for (let i = 0; i < 1; i++) {
-        document.getElementById("pcWord").innerHTML = wordVisual[i]
-    }
-    for (let i = 1; i < wordVisual.length; i++) {
-        document.getElementById("pcWord").innerHTML += wordVisual[i]
-    } 
-}
-
-/*Modal*/
-
-/*Fim Modal*/
+// Jogadores
+let pName1
+let pName2

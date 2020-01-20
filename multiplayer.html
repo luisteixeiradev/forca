@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,63 +9,64 @@
     <title>Jogo da Forca</title>
     <link rel="stylesheet" href="multiplayer.css">
 </head>
+
 <body>
-    
-        <!-- Estruturação do jogo no body -->
-        <div class="grid">
 
-            <!-- Lado Esquerdo -->
-            <div class="left">
-                <img class="leftImage" src="img/p1.png" alt="">
-                <p class="leftP"></p>
-            </div>
-     
-            <!-- Meio -->
-            <div class="center">
-                <div class="forcaCentro"> <img class="forca" src="" alt=""> </div>
-                <hr>
-                <p id="category"></p>
-                <p id="pcWord"></p>
-                <hr>
-                <div class="keyboard"></div>
-            </div>
-     
-            <!-- Lado Direito -->
-            <div class="right">
-                <img class="rightImage" src="img/p2.png" alt="">
-                <p class="rightP"></p>
-            </div>
+    <!-- Estruturação do jogo no body -->
+    <div class="grid">
 
+        <!-- Lado Esquerdo -->
+        <div class="left">
+            <img class="leftImage" src="img/p1.png" alt="">
+            <p class="leftP"></p>
         </div>
 
-        <div id="modalNomes" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <p>Nome dos jogadores</p>
-                <div class="namePlayers">
-                    <label id="player1">Jogador 1</label>
-                    <input type="text" name="" class="inputNames" id="inputName1">
-                </div>
-                <div class="namePlayers">
-                    <label id="player2">Jogador 2</label>
-                    <input type="text" name="" class="inputNames" id="inputName2">
-                </div>
-                <button class="btnInputNames">Jogar</button>
-            </div>
-          
+        <!-- Meio -->
+        <div class="center">
+            <div class="forcaCentro"> <img class="forca" src="" alt=""> </div>
+            <hr>
+            <p id="category"></p>
+            <p id="pcWord"></p>
+            <hr>
+            <div class="keyboard"></div>
         </div>
 
-        <div id="modalGameOver" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <p>GAME OVER</p>
-            </div>
-          
+        <!-- Lado Direito -->
+        <div class="right">
+            <img class="rightImage" src="img/p2.png" alt="">
+            <p class="rightP"></p>
         </div>
-    
+
+    </div>
+
+    <div id="modalNomes" class="modal">
+
+        <!-- Escolha dos nomes -->
+        <div class="modal-content">
+            <p>Nome dos jogadores</p>
+            <div class="namePlayers">
+                <label id="player1">Jogador 1</label>
+                <input type="text" name="" class="inputNames" id="inputName1">
+            </div>
+            <div class="namePlayers">
+                <label id="player2">Jogador 2</label>
+                <input type="text" name="" class="inputNames" id="inputName2">
+            </div>
+            <button class="btnInputNames">Jogar</button>
+        </div>
+
+    </div>
+
+    <div id="modalGameOver" class="modal">
+
+        <!-- Game Over Pop-Up -->
+        <div class="modal-content">
+            <p>GAME OVER</p>
+        </div>
+
+    </div>
 
     <script src="multiplayer.js"></script>
 </body>
+
 </html>
