@@ -47,6 +47,7 @@ function useLetter(letter) {
                 wordVisualF()
             }
         }
+        document.getElementById(`letter${letter}`).style = "background: green;"
     } else {
         contForca = contForca + 1
         document.querySelector(".forca").src = `img/f${contForca}.png`
@@ -54,6 +55,10 @@ function useLetter(letter) {
 
     if (contForca === 6) {
         document.querySelector("#modalGameOver").style.display = "block"
+    }
+
+    if (JSON.stringify(word)==JSON.stringify(wordVisual)) {
+        document.location.reload(true)
     }
 }
 
