@@ -164,9 +164,11 @@ body {
       background-color: #b27214;
       border: 5px solid #f7b239;
       color: #fff;
-      
   }
 
+  .inputNames:focus{
+      outline: 0;
+  }
 
   .btnInputNames{
     width: 100px;
