@@ -21,34 +21,20 @@ function useLetter(letter) {
         letter
     });
     console.log(word);
-    /*console.log(letterAttempt);*/
-
+    console.log(word.includes(letter) === true);
     
     if (word.includes(letter)) {
         for (let i = 0; i < word.length; i++) {
             if (letter === word[i]) {
-                wordVisual.push(letter)
-                console.log(wordVisual)
-                visualWordF()
-                console.log(wordVisual)
+                wordVisual[i] = letter
+                wordVisualF()
             }
         }
     } else {
         contForca = contForca + 1
         document.querySelector(".forca").src = `img/f${contForca}.png`
     }
-
-    /*for (let i = 0; i < word.length; i++) {
-        if (letter === word[i]) {
-            wordVisual.push(letter)
-            console.log(letter);
-            visualWord()
-        } else {
-            contForca = contForca + 1
-            document.querySelector(".forca").src = `img/f${contForca}.png`
-        }
-    }*/
-
+    
     if (contForca === 6) {
         document.querySelector("#modalGameOver").style.display = "block"
     }
@@ -74,6 +60,8 @@ function randomWordAndCategory() {
         document.getElementById("pcWord").innerHTML += wordVisual[i]
     }
 console.log(word);
+console.log(wordVisual);
+
 
 }
 
@@ -108,9 +96,13 @@ randomWordAndCategory()
 document.querySelector(".btnInputNames").addEventListener("click", jogar);
 
 function wordVisualF() {
-    for (let i = 0; i < wordVisual.length; i++) {
-        document.getElementById("pcWord").innerHTML += wordVisual[i]
+    console.log(wordVisual);
+    for (let i = 0; i < 1; i++) {
+        document.getElementById("pcWord").innerHTML = wordVisual[i]
     }
+    for (let i = 1; i < wordVisual.length; i++) {
+        document.getElementById("pcWord").innerHTML += wordVisual[i]
+    } 
 }
 
 /*Modal*/
