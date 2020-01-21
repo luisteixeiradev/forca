@@ -129,7 +129,7 @@ body {
 }
 
 /* Nomes dos jogadores no menu */
-#modalNomes {
+#modalNames {
     display: block;
 }
 
@@ -139,7 +139,7 @@ body {
 }
 
 /* Texto menu escolha dos jogadores */
-#modalGameOver>.modal-content > .gameOver {
+#modalGameOver>.modal-content>.gameOver {
     font-size: xxx-large;
 }
 
