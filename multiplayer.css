@@ -139,7 +139,7 @@ body {
 }
 
 /* Texto menu escolha dos jogadores */
-#modalGameOver>.modal-content {
+#modalGameOver>.modal-content > .gameOver {
     font-size: xxx-large;
 }
 

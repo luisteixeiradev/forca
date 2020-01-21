@@ -4,7 +4,7 @@ const words = [{
         items: ['ionic', 'angular', 'react']
     },
     {
-        category: 'linguagens',
+        category: 'linguagens de programação',
         items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'typescript', 'euphoria', 'lua', 'asp', 'matlab', 'rubi']
     }
 ]
@@ -54,10 +54,11 @@ function useLetter(letter) {
     }
 
     if (contForca === 6) {
+        document.querySelector("#pcWordGameOver").innerHTML = word.join("") 
         document.querySelector("#modalGameOver").style.display = "block"
     }
 
-    if (JSON.stringify(word)==JSON.stringify(wordVisual)) {
+    if (word.join("") == wordVisual.join("")) {
         document.location.reload(true)
     }
 }
