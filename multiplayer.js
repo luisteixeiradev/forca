@@ -18,7 +18,7 @@ const words = [{
     },
     {
         category: 'linguagens de programação',
-        items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'typescript', 'euphoria', 'lua', 'asp', 'matlab', 'rubi']
+        items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'euphoria', 'lua', 'matlab', 'rubi']
     }
 ]
 
