@@ -1,4 +1,6 @@
 // Palavras PC
+const ATTEMPTS_NUMBER = 6
+
 const words = [{
         category: 'frameworks',
         items: ['ionic', 'angular', 'react']
@@ -8,6 +10,10 @@ const words = [{
         items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'typescript', 'euphoria', 'lua', 'asp', 'matlab', 'rubi']
     }
 ]
+
+// Jogadores
+let pName1
+let pName2
 
 // Teclado
 const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
@@ -44,7 +50,7 @@ function useLetter(letter) {
         for (let i = 0; i < word.length; i++) {
             if (letter === word[i]) {
                 wordVisual[i] = letter
-                wordVisualF()
+                wordVisualF()                
             }
         }
         document.getElementById(`letter${letter}`).style = "background: green;"
@@ -53,7 +59,7 @@ function useLetter(letter) {
         document.querySelector(".forca").src = `img/f${contForca}.png`
     }
 
-    if (contForca === 6) {
+    if (contForca === ATTEMPTS_NUMBER) {
         document.querySelector("#pcWordGameOver").innerHTML = word.join("") 
         document.querySelector("#modalGameOver").style.display = "block"
     }
@@ -65,11 +71,8 @@ function useLetter(letter) {
 
 // Substitui letra tentada por visualWord
 function wordVisualF() {
-    console.log(wordVisual);
-    for (let i = 0; i < 1; i++) {
-        document.getElementById("pcWord").innerHTML = wordVisual[i]
-    }
-    for (let i = 1; i < wordVisual.length; i++) {
+    document.getElementById("pcWord").innerHTML=""   
+    for (let i = 0; i < wordVisual.length; i++) {
         document.getElementById("pcWord").innerHTML += wordVisual[i]
     }
 }
@@ -92,6 +95,3 @@ function jogar() {
 }
 document.querySelector(".btnInputNames").addEventListener("click", jogar);
 
-// Jogadores
-let pName1
-let pName2
