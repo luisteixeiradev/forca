@@ -80,6 +80,12 @@ function useLetter(letter) {
         }
         document.querySelector("#modalWin").style.display = "block"
     }
+
+    if (countForca === MAX_FORCA && turn === 1) {
+        document.querySelector("#winner").innerHTML = playerName1
+    } else {
+        document.querySelector("#winner").innerHTML = playerName2
+    }
 }
 
 // Substitui letra tentada por visualWord
