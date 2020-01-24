@@ -10,6 +10,9 @@ let word = []
 let wordVisual = []
 // Contador da forca
 let countForca = 0
+// Turno
+let turn = 1
+document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
 
 // Palavras PC
 const words = [{
@@ -60,6 +63,8 @@ function useLetter(letter) {
     } else {
         countForca = countForca + 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
+        turn = turn * -1
+        changeTurnVisual()
     }
 
     if (countForca === MAX_FORCA) {
@@ -68,8 +73,12 @@ function useLetter(letter) {
     }
 
     if (word.join("") == wordVisual.join("")) {
-        console.log("Acabou");
-        
+        if (turn == 1) {
+            document.querySelector("#winner").innerHTML = playerName1
+        } else {
+            document.querySelector("#winner").innerHTML = playerName2
+        }
+        document.querySelector("#modalWin").style.display = "block"
     }
 }
 
@@ -98,3 +107,14 @@ function startGame() {
     }
 }
 document.querySelector(".btnInputNames").addEventListener("click", startGame);
+
+// Função para trocar visual dos turnos
+function changeTurnVisual() {
+    if (turn === -1) {
+        document.querySelector(".right").style = "border: solid green 5px; border-radius: 5px";
+        document.querySelector(".left").style = "";
+    } else if (turn === 1) {
+        document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
+        document.querySelector(".right").style = "";
+    }
+}
