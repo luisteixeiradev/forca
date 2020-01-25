@@ -82,11 +82,11 @@ function useLetter(letter) {
     // Ativa modal da vitória em caso das letras estarem todas selecionadas
     if (word.join("") === wordVisual.join("")) {
         if (turn === 1) {
-            document.querySelector("#winner").innerHTML = playerName1
-            document.querySelector("#pcWordGameOver").innerHTML = word.join("")
+            document.querySelector("#winnerDif").innerHTML = playerName1
+            document.querySelector("#pcWordGameOverDif").innerHTML = word.join("")
         } else {
-            document.querySelector("#winner").innerHTML = playerName2
-            document.querySelector("#pcWordGameOver").innerHTML = word.join("")
+            document.querySelector("#winnerDif").innerHTML = playerName2
+            document.querySelector("#pcWordGameOverDif").innerHTML = word.join("")
         }
         document.querySelector("#modalWin").style.display = "block"
     }
@@ -135,3 +135,11 @@ function changeTurnVisual() {
         document.querySelector(".right").style = "";
     }
 }
+
+// Funções reiniciar jogo
+document.querySelector("#playAgain").addEventListener("click", function () {
+    location.reload()
+});
+document.querySelector("#playAgainDif").addEventListener("click", function () {
+    location.reload()
+});

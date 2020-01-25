@@ -213,6 +213,31 @@ body {
     transition: 0.5s ease-in-out;
 }
 
+/* Botão escolher jogadores / começar jogo */
+.btnRestart {
+    width: 100px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Hover no botão */
+.btnRestart:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
 /* Cor do indicador dos turnos */
 .currentTurn {
     border: solid green 5px;
