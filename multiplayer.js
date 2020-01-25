@@ -10,7 +10,7 @@ let word = []
 let wordVisual = []
 // Contador da forca
 let countForca = 0
-// Turno
+// Contador de turno e indicação visual dos turnos
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
 
@@ -31,7 +31,7 @@ for (let i = 0; i < letters.length; i++) {
     document.getElementsByClassName('keyboard')[0].innerHTML += `<button class="bLetters" id="letter${letters[i]}" onclick="useLetter('${letters[i]}')">${letters[i]}</button>`
 };
 
-// Função para escolher a palavra
+// Função para escolher e representar a palavra e categoria da mesma em HTML
 function randomWordAndCategory() {
 
     let categoryObject = words[Math.floor(Math.random() * words.length)]
@@ -48,10 +48,13 @@ function randomWordAndCategory() {
 }
 randomWordAndCategory()
 
-// Tentativa de letra; Troca letra(_ _) por letra(A.ex) ou adiciona parte da forca
+// Lójica da parte jogável
 function useLetter(letter) {
+
+    // Quando user clica numa letra, desativa essa letra
     document.getElementById(`letter${letter}`).disabled = true;
 
+    // Troca visualmente conjunto (_ _) pela letra quando user acerta
     if (word.includes(letter)) {
         for (let i = 0; i < word.length; i++) {
             if (letter === word[i]) {
@@ -59,7 +62,10 @@ function useLetter(letter) {
                 changeLetterVisual()
             }
         }
+        // Mostra visualmente que a letra estava correta com fundo verde no botão
         document.getElementById(`letter${letter}`).style = "background: green;"
+
+        // Altera turno; altera visual da forca e do turno
     } else {
         countForca = countForca + 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
@@ -67,20 +73,25 @@ function useLetter(letter) {
         changeTurnVisual()
     }
 
+    // Ativa modal do game over
     if (countForca === MAX_FORCA) {
         document.querySelector("#pcWordGameOver").innerHTML = word.join("")
         document.querySelector("#modalGameOver").style.display = "block"
     }
 
-    if (word.join("") == wordVisual.join("")) {
-        if (turn == 1) {
+    // Ativa modal da vitória em caso das letras estarem todas selecionadas
+    if (word.join("") === wordVisual.join("")) {
+        if (turn === 1) {
             document.querySelector("#winner").innerHTML = playerName1
+            document.querySelector("#pcWordGameOver").innerHTML = word.join("")
         } else {
             document.querySelector("#winner").innerHTML = playerName2
+            document.querySelector("#pcWordGameOver").innerHTML = word.join("")
         }
         document.querySelector("#modalWin").style.display = "block"
     }
 
+    // Altera conteúdo da modal conforme o vencedor
     if (countForca === MAX_FORCA && turn === 1) {
         document.querySelector("#winner").innerHTML = playerName1
     } else {

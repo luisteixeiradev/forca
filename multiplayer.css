@@ -213,6 +213,7 @@ body {
     transition: 0.5s ease-in-out;
 }
 
+/* Cor do indicador dos turnos */
 .currentTurn {
     border: solid green 5px;
     border-radius: 5px;
