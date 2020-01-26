@@ -19,10 +19,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Grelha para ranking */
-.grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-items: center;
-    height: 100%;
+.textRegras1vs1 {
+    text-align: center;
+    padding-top: 40px;
 }
