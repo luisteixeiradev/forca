@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 10px;
+    background: gray;
+    font-family: 'Exo', sans-serif;
+}
+
+.content {
+    width: 65%;
+    background: gray;
+    align-content: center;
+    margin-left: 17.5%;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 20%;
+    margin-left: 40%;
+    margin-bottom: 10px;
+}
+
+.textRegras {
+    text-align: center;
+}
+
+/* Grelha para ranking */
+.grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    height: 100%;
+}
