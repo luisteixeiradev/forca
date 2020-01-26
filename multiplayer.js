@@ -13,6 +13,10 @@ let countForca = 0
 // Contador de turno e indicação visual dos turnos
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
+// Botão ajuda letra
+let helpAddLetter = document.querySelector(".helpAddLetter")
+// Botão ajuda forca
+let helpRemoveForca = document.querySelector(".helpRemoveForca")
 
 // Palavras PC
 const words = [{
@@ -143,3 +147,28 @@ document.querySelector("#playAgain").addEventListener("click", function () {
 document.querySelector("#playAgainDif").addEventListener("click", function () {
     location.reload()
 });
+
+// Função ajuda de adicionar uma letra à palavra
+helpAddLetter.addEventListener("click", function () {
+    helpAddLetter.disabled = true;
+    let randomLetter = word[Math.floor(Math.random() * word.length)]
+    if (word.includes(randomLetter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (randomLetter === word[i]) {
+                wordVisual[i] = randomLetter
+                changeLetterVisual()
+                useLetter(randomLetter)
+            }
+        }
+    }
+})
+
+// Função ajuda de remover um elemento à forca
+helpRemoveForca.addEventListener("click", function () {
+    helpRemoveForca.disabled = true;
+    if (countForca >= 1) {
+        document.querySelector(".forca").src = `img/f${countForca = countForca -1}.png`
+    } else if (countForca < 1) {
+        helpRemoveForca.disabled = false
+    }
+})
