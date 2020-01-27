@@ -81,6 +81,8 @@ function useLetter(letter) {
     if (countForca === MAX_FORCA) {
         document.querySelector("#pcWordGameOver").innerHTML = word.join("")
         document.querySelector("#modalGameOver").style.display = "block"
+        document.querySelector(".right").style = "none"
+        document.querySelector(".left").style = "none"
     }
 
     // Ativa modal da vitória em caso das letras estarem todas selecionadas
@@ -88,9 +90,14 @@ function useLetter(letter) {
         if (turn === 1) {
             document.querySelector("#winnerDif").innerHTML = playerName1
             document.querySelector("#pcWordGameOverDif").innerHTML = word.join("")
+            document.querySelector(".right").style = "none"
+            document.querySelector(".left").style = "none"
+
         } else {
             document.querySelector("#winnerDif").innerHTML = playerName2
             document.querySelector("#pcWordGameOverDif").innerHTML = word.join("")
+            document.querySelector(".right").style = "none"
+            document.querySelector(".left").style = "none"
         }
         document.querySelector("#modalWin").style.display = "block"
     }
@@ -161,6 +168,8 @@ helpAddLetter.addEventListener("click", function () {
             }
         }
     }
+    turn = turn * -1
+    changeTurnVisual()
 })
 
 // Função ajuda de remover um elemento à forca
@@ -171,4 +180,16 @@ helpRemoveForca.addEventListener("click", function () {
     } else if (countForca < 1) {
         helpRemoveForca.disabled = false
     }
+    turn = turn * -1
+    changeTurnVisual()
+})
+
+// Funções para botão voltar ao menu principal
+let mainMenuButton = document.getElementById("mainMenuButton")
+mainMenuButton.addEventListener("click", function () {
+    location.href = "index.html"
+})
+let mainMenuButtonDif = document.getElementById("mainMenuButtonDif")
+mainMenuButtonDif.addEventListener("click", function () {
+    location.href = "index.html"
 })

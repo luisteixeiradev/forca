@@ -50,20 +50,33 @@ body {
 /* Centrar forca */
 .forcaCentro {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 /* Posicionamento da palavra escolhida pelo PC */
 .pcWord {
     padding-top: 60px;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
     align-content: center;
+}
+
+/* Equilíbrio da parte central visual */
+#pcWord {
+    padding-bottom: 20px;
+    font-size: 20px;
 }
 
 /* Posicionamento da categoria da palavra */
 .category {
     text-align: center;
     align-content: center;
+}
+
+/* Equilíbrio da parte central visual */
+#category {
+    padding-top: 20px;
+    font-size: 15px;
 }
 
 /* Posicionamento do texto no centro da div */
@@ -88,6 +101,12 @@ body {
     box-shadow: 0px 15px 20px black;
     font-family: 'Exo', sans-serif;
     color: white;
+}
+
+/* Equilíbrio da parte central visual */
+.keyboard {
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 /* Botões do teclado ao fazer hover */
@@ -183,6 +202,11 @@ body {
     color: #fff;
 }
 
+/* Alinhamento inputs dos nomes */
+#inputName1 {
+    margin-left: 22px;
+}
+
 /* Nomes dos jogadores */
 .inputNames:focus {
     outline: 0;
@@ -231,8 +255,58 @@ body {
     color: white;
 }
 
-/* Hover no botão */
+/* Botão menu principal */
+#mainMenuButton {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Botão menu principal */
+#mainMenuButtonDif {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Hover no botão restart */
 .btnRestart:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
+/* Hover no botão do menu */
+#mainMenuButton:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
+/* Hover no botão do menu */
+#mainMenuButtonDif:hover {
     background: white;
     color: #b27214;
     transition: 0.5s ease-in-out;
@@ -247,12 +321,13 @@ body {
 /* Indicação das ajudas */
 .indicationAjudas {
     padding-top: 20px;
+    padding-bottom: 25px;
 }
 
 /* Botão ajuda numa letra */
 .helpAddLetter {
-    width: 200px;
-    height: 50px;
+    width: 220px;
+    height: 65px;
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -269,8 +344,8 @@ body {
 
 /* Botão ajuda na forca */
 .helpRemoveForca {
-    width: 200px;
-    height: 50px;
+    width: 220px;
+    height: 65px;
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -319,4 +394,16 @@ body {
     margin-left: 12.5px;
     margin-right: 12.5px;
     transition: 0.5s ease-in-out;
+}
+
+/* Cor da palavra escolhida na modal */
+#pcWordGameOver,
+#pcWordGameOverDif {
+    color: black;
+}
+
+/* Cor do nome do vencedor */
+#winner,
+#winnerDif {
+    color: lightgreen;
 }

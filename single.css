@@ -1,0 +1,344 @@
+/* Altura do HTML */
+html {
+    height: 100%;
+}
+
+/* Formatação do body */
+body {
+    background-color: grey;
+    height: 100%;
+    margin: 0;
+    font-family: 'Exo', sans-serif;
+}
+
+/* Criação Grelha para Jogo */
+.grid {
+    display: grid;
+    grid-template-columns: 25% 60%;
+    justify-items: center;
+    height: 100%;
+}
+
+/* Posição HUD jogador */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+/* Tamanho HUD jogador */
+.leftImage {
+    width: auto;
+    height: 100px;
+}
+
+/* Centrar Nome do Jogador */
+.leftP {
+    margin: auto;
+}
+
+/* Posição e tamanho da forca */
+.forca {
+    padding-top: 60px;
+    width: auto;
+    height: 120px;
+}
+
+/* Centrar forca */
+.forcaCentro {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Posicionamento da palavra escolhida pelo PC */
+.pcWord {
+    padding-top: 60px;
+    text-align: center;
+    font-size: 35px;
+    align-content: center;
+}
+
+/* Equilíbrio da parte central visual */
+#pcWord {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Posicionamento da categoria da palavra */
+.category {
+    text-align: center;
+    align-content: center;
+}
+
+/* Equilíbrio da parte central visual */
+#category {
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+/* Posicionamento do texto no centro da div */
+.center {
+    text-align: center;
+    width: 80%;
+}
+
+/* Botões do teclado */
+.bLetters {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Equilíbrio da parte central visual */
+.keyboard {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Botões do teclado ao fazer hover */
+.bLetters:hover {
+    background: white;
+    color: #b27214;
+    font-size: 12.5px;
+    width: 49px;
+    height: 49px;
+    margin-left: 10.5px;
+    margin-right: 10.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Botões do teclado quando já escolhidas */
+.bLetters:disabled {
+    background: red;
+    color: #fff;
+    font-size: 12.5px;
+    width: 45px;
+    height: 45px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Conteúdo modal */
+.modal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Pop-Up game over */
+#modalGameOver {
+    display: none;
+}
+
+/* Pop-Up win */
+#modalWin {
+    display: none;
+}
+
+/* Texto menu escolha dos jogadores */
+#modalGameOver>.modal-content>.gameOver {
+    font-size: xxx-large;
+}
+
+/* Texto menu escolha dos jogadores */
+#modalWin>.modal-content>.win {
+    font-size: xxx-large;
+}
+
+/* Menu escolher jogadores */
+.modal-content {
+    background-color: #b27214;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #fff;
+    width: 50%;
+    border-radius: 20px;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* Botão escolher jogadores / começar jogo */
+.btnRestart {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Botão menu principal */
+#mainMenuButton {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Botão menu principal */
+#mainMenuButtonDif {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Hover no botão restart */
+.btnRestart:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
+/* Hover no botão do menu */
+#mainMenuButton:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
+/* Hover no botão do menu */
+#mainMenuButtonDif:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
+/* Indicação das ajudas */
+.indicationAjudas {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+/* Botão ajuda numa letra */
+.helpAddLetter {
+    width: 220px;
+    height: 65px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Botão ajuda na forca */
+.helpRemoveForca {
+    width: 220px;
+    height: 65px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+/* Botão ajuda numa letra quando com o rato por cima*/
+.helpAddLetter:hover {
+    background: white;
+    color: #b27214;
+    font-size: 12.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Botão ajuda na forca quando com o rato por cima*/
+.helpRemoveForca:hover {
+    background: white;
+    color: #b27214;
+    font-size: 12.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Botão de ajuda letra quando já escolhida */
+.helpAddLetter:disabled {
+    background: red;
+    color: #fff;
+    font-size: 12.5px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Botão de ajuda forca quando já escolhida */
+.helpRemoveForca:disabled {
+    background: red;
+    color: #fff;
+    font-size: 12.5px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Cor da palavra escolhida na modal */
+#pcWordGameOver,
+#pcWordGameOverDif {
+    color: black;
+}
+
+/* Cor do nome do vencedor */
+#winner,
+#winnerDif {
+    color: lightgreen;
+}

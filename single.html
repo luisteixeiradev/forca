@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Exo:700&display=swap" rel="stylesheet">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href=" single.css">
+</head>
+
+<body>
+
+    <!-- Estruturação do jogo no body -->
+    <div class="grid">
+
+        <!-- Lado Esquerdo -->
+        <div class="left">
+            <img class="leftImage" src="img/p1.png" alt="">
+            <p class="leftP">EU</p>
+        </div>
+
+        <!-- Lado Direito -->
+        <div class="center">
+            <div class="forcaCentro"> <img class="forca" src="" alt=""> </div>
+            <hr>
+            <p id="category"></p>
+            <p id="pcWord"></p>
+            <hr>
+            <div class="keyboard"></div>
+            <div class="indicationAjudas">AJUDAS:</div>
+            <div class="ajudas">
+                <button class="helpAddLetter">Dá-me uma Letra!</button>
+                <button class="helpRemoveForca">Ajuda-me na Forca!</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Game Over Pop-Up -->
+    <div id="modalGameOver" class="modal">
+        <div class="modal-content">
+            <p class="gameOver">Game Over!</p>
+            <p><span id="winner"></span></p>
+            <p>A palavra era <span id="pcWordGameOver"></span></p>
+            <button id="playAgain" class="btnRestart">Jogar Novamente</button>
+            <button id="mainMenuButton">Menu Principal</button>
+        </div>
+    </div>
+
+    <!-- Vitória Pop-Up -->
+    <div id="modalWin" class="modal">
+        <div class="modal-content">
+            <p class="win">Parabéns!</p>
+            <p><span id="winnerDif"></span></p>
+            <p>A palavra era <span id="pcWordGameOverDif"></span></p>
+            <button id="playAgainDif" class="btnRestart">Jogar Novamente</button>
+            <button id="mainMenuButtonDif">Menu Principal</button>
+        </div>
+    </div>
+
+    <script src="single.js"></script>
+</body>
+
+</html>
