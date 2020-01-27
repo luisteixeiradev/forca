@@ -12,36 +12,49 @@
 </head>
 
 <body>
-    <div class="content">
+
+    <div class="homeContent">
         <img src="img/logo.png" class="logo" alt="">
 
+        <!-- Regras vs PC -->
+        <button type="button" class="collapsible">vs PC</button>
+        <div class="textRegras content">
+            <p class="green">Regras vs PC:</p>
+        </div>
 
-
-
-        <div class="textRegras1vs1">
-            <p>Regras 1 vs 1:</p>
+        <!-- Regras 1 vs 1 -->
+        <button class="collapsible">1 vs 1</button>
+        <div class="textRegras content">
+            <p class="green">Regras 1 vs 1:</p>
             <p>No início da partida cada jogador escolhe o seu nome;</p>
             <p>Jogam um contra o outro com o objetivo de encontrar a palavra selecionada pelo CPU;</p>
-            <p>Em caso de um jogador acertar uma letra, continua a ser o mesmo a jogar... Caso contrário, passa à vez do
+            <p>Em caso de um jogador acertar uma letra, continua a ser o mesmo a jogar... Caso contrário, passa
+                à
+                vez do
                 outro jogador;</p>
             <p>Podem usar as ajudas fornecidas para ter uma maior hipótese de ganhar ao adversário;</p>
-            <p>Ajudas:</p>
+            <p class="green">Ajudas:</p>
             <p>"Dá-me uma Letra!": Quando selecionada, revela uma letra... Cuidado! Pode revelar uma letra já
                 anteriormente encontrada!;</p>
             <p>"Ajuda-me na Forca!": Quando selecionada, volta atrás um elemento na forca;</p>
-            <p>Condições de vitória:</p>
-            <p>Se a palavra tiver sido encontrada na sua totalidade, ganha o jogador que encontrou a última letra;</p>
-            <p>Caso a palavra não tenha sido encontrada na sua totalidade, ganha o jogador que não selecionou a última
+            <p class="green">Condições de vitória:</p>
+            <p>Se a palavra tiver sido encontrada na sua totalidade, ganha o jogador que encontrou a última
+                letra;
+            </p>
+            <p>Caso a palavra não tenha sido encontrada na sua totalidade, ganha o jogador que não selecionou a
+                última
                 letra errada.</p>
         </div>
 
-
-
-
-
-
+        <!-- Sistema de Ranking -->
+        <button class="collapsible">Sistema de Ranking</button>
+        <div class="textRegras content">
+            <p class="green">Sistema de Ranking:</p>
+        </div>
 
     </div>
+
+    <script src="regras.js"></script>
 </body>
 
 </html>

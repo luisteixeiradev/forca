@@ -1,3 +1,4 @@
+/* Formatação do body */
 body {
     margin: 0;
     padding: 10px;
@@ -5,7 +6,8 @@ body {
     font-family: 'Exo', sans-serif;
 }
 
-.content {
+/* Formatação geral CSS igual ao home */
+.homeContent {
     width: 65%;
     background: gray;
     align-content: center;
@@ -13,13 +15,37 @@ body {
     padding: 20px 0;
 }
 
+/* Formatação do logo */
 .logo {
     width: 20%;
     margin-left: 40%;
     margin-bottom: 10px;
+    padding-bottom: 50px;
 }
 
-.textRegras1vs1 {
+/* Alinhamento central do texto dentro dos collapsibles */
+.textRegras {
     text-align: center;
-    padding-top: 40px;
+}
+
+/* Alinhamento central dos botões */
+.alignButtons {
+    padding-top: 35px;
+}
+
+/* Default HIDDEN dos collapsibles e estilização dos mesmo */
+.content {
+    padding: 20px 0;
+    background: gray;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 17.5%;
+    width: 65%;
+    align-content: center;
+}
+
+/* Destacar algumas palavras */
+.green {
+    color: lightgreen;
 }
