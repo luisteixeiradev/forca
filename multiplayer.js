@@ -168,8 +168,6 @@ helpAddLetter.addEventListener("click", function () {
             }
         }
     }
-    turn = turn * -1
-    changeTurnVisual()
 })
 
 // Função ajuda de remover um elemento à forca
@@ -180,8 +178,6 @@ helpRemoveForca.addEventListener("click", function () {
     } else if (countForca < 1) {
         helpRemoveForca.disabled = false
     }
-    turn = turn * -1
-    changeTurnVisual()
 })
 
 // Funções para botão voltar ao menu principal
