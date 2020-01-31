@@ -1,4 +1,5 @@
 // Variáveis globais
+
 // Máximo tentativas de letra
 const MAX_FORCA = 6
 // Jogadores
@@ -100,6 +101,8 @@ function useLetter(letter) {
             document.querySelector(".left").style = "none"
         }
         document.querySelector("#modalWin").style.display = "block"
+
+        addRanking()
     }
 
     // Altera conteúdo da modal conforme o vencedor
@@ -189,3 +192,34 @@ let mainMenuButtonDif = document.getElementById("mainMenuButtonDif")
 mainMenuButtonDif.addEventListener("click", function () {
     location.href = "index.html"
 })
+
+//Função do Ranking
+
+function addRanking() {
+
+    let ranking = JSON.parse(localStorage.getItem("ranking")) || []
+
+    let currentPlayer = null
+    console.log(turn);
+    
+    if (turn === 1) currentPlayer = playerName1
+    if (turn === 2) currentPlayer = playerName2
+
+    let isUpdated = false
+    ranking.map(obj => {
+        if (obj.name === currentPlayer) {
+            obj.score += 1
+            isUpdated = true
+        } 
+    })
+
+    if (isUpdated === false) {
+        ranking.push({
+            "name": currentPlayer,
+            "score": 1
+        })
+    }
+
+
+    localStorage.setItem("ranking", JSON.stringify(ranking))
+}
