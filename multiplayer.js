@@ -203,7 +203,7 @@ function addRanking() {
     console.log(turn);
     
     if (turn === 1) currentPlayer = playerName1
-    if (turn === 2) currentPlayer = playerName2
+    if (turn === -1) currentPlayer = playerName2
 
     let isUpdated = false
     ranking.map(obj => {
@@ -219,7 +219,6 @@ function addRanking() {
             "score": 1
         })
     }
-
 
     localStorage.setItem("ranking", JSON.stringify(ranking))
 }
