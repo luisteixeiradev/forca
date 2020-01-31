@@ -30,8 +30,9 @@ body {
 /* Tamanho HUD jogador */
 .leftImage,
 .rightImage {
-    width: auto;
-    height: 100px;
+    width: 100px;
+    /*height: 100px;*/
+    margin: auto;
 }
 
 /* Centrar Nome do Jogador */
