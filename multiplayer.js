@@ -131,8 +131,8 @@ function startGame() {
         alert("Por Favor Escolhe o Teu Nome!")
     } else {
         document.querySelector("#modalNames").style.display = "none"
-        playerName1 = document.querySelector("#inputName1").value
-        playerName2 = document.querySelector("#inputName2").value
+        playerName1 = document.querySelector("#inputName1").value.toUpperCase()
+        playerName2 = document.querySelector("#inputName2").value.toUpperCase()
         document.querySelector(".leftP").innerHTML = playerName1
         document.querySelector(".rightP").innerHTML = playerName2
     }
