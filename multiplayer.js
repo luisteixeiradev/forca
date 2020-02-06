@@ -170,7 +170,7 @@ function funcHelpAddLetterP1(btnAddLetter) {
     if (word.includes(randomLetter)) {
         for (let i = 0; i < word.length; i++) {
             if (randomLetter !== (wordVisual[i])) {
-                if ((randomLetter === word[i]) && (randomLetter !== wordVisual[i])) {
+                if ((randomLetter === word[i])) {
                     wordVisual[i] = randomLetter
                     changeLetterVisual()
                     useLetter(randomLetter)
