@@ -28,6 +28,7 @@ body {
     width: 100%;
 }
 
+/* Width das posições dos jogadores no ranking */
 .headerSizeFirst {
     width: 10%;
 }
@@ -38,6 +39,7 @@ body {
     color: lightgreen;
 }
 
+/* Posicionamento dos elementos */
 .headerSizeFirst,
 .rankingNames,
 .rankingScores {
@@ -46,6 +48,7 @@ body {
     padding-bottom: 10px;
 }
 
+/* tabela */
 table {
     border-collapse: collapse;
     border-style: hidden;
@@ -56,10 +59,10 @@ th {
     border: 1px solid black;
 }
 
-.sameScore{
+.sameScore {
     border-bottom: 1px solid transparent;
 }
 
-.orderRanking{
+.orderRanking {
     text-align: center;
 }

@@ -15,6 +15,8 @@ let countForca = 0
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
 
+/* disableOtherHelp() */
+
 // Botão ajuda letra
 let helpAddLetterP1 = document.querySelector("#helpAddLetterP1")
 let helpAddLetterP2 = document.querySelector("#helpAddLetterP2")
@@ -79,6 +81,7 @@ function useLetter(letter) {
         document.querySelector(".forca").src = `img/f${countForca}.png`
         turn = turn * -1
         changeTurnVisual()
+        /* disableOtherHelp() */
     }
 
     // Ativa modal do game over
@@ -104,7 +107,6 @@ function useLetter(letter) {
             document.querySelector(".left").style = "none"
         }
         document.querySelector("#modalWin").style.display = "block"
-
         addRanking()
     }
 
@@ -161,88 +163,110 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
     location.reload()
 });
 
-// Função ajuda de adicionar uma letra à palavra
+// Função ajuda de adicionar uma letra à palavra jogador 1
 function funcHelpAddLetterP1(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
+
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
     if (word.includes(randomLetter)) {
-        for (let i = 0; i < word.length; i++) {
-            if (randomLetter !== wordVisual[i]) {
+
+        if (!wordVisual.includes(randomLetter)) {
+            for (let i = 0; i < word.length; i++) {
                 if (randomLetter === word[i]) {
                     wordVisual[i] = randomLetter
                     changeLetterVisual()
                     useLetter(randomLetter)
                 }
-            } else if (randomLetter === wordVisual[i]) {
-                funcHelpAddLetterP1(btnAddLetter)
             }
+        } else if (wordVisual.includes(randomLetter)) {
+            funcHelpAddLetterP1(btnAddLetter)
         }
     }
 }
 
-// Função ajuda de adicionar uma letra à palavra
+// Função ajuda de adicionar uma letra à palavra jogador 2
 function funcHelpAddLetterP2(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
+
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
     if (word.includes(randomLetter)) {
-        for (let i = 0; i < word.length; i++) {
-            if (randomLetter !== (wordVisual[i])) {
+
+        if (!wordVisual.includes(randomLetter)) {
+            for (let i = 0; i < word.length; i++) {
                 if (randomLetter === word[i]) {
                     wordVisual[i] = randomLetter
                     changeLetterVisual()
                     useLetter(randomLetter)
                 }
-            } else if (randomLetter === wordVisual[i]) {
-                funcHelpAddLetterP2(btnAddLetter)
             }
+        } else if (wordVisual.includes(randomLetter)) {
+            funcHelpAddLetterP2(btnAddLetter)
         }
     }
 }
 
-// Função ajuda de remover um elemento à forca
+// Função ajuda de remover um elemento à forca jogador 1
 function funcHelpRemoveForcaP1(btnRemoveForca) {
     if (countForca > 0) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
 
-// Função ajuda de remover um elemento à forca
-function funcHRemoveForcaP2(btnRemoveForca) {
+// Função ajuda de remover um elemento à forca jogador 2
+function funcHelpRemoveForcaP2(btnRemoveForca) {
     if (countForca > 0) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
-/* helpAddLetter.addEventListener("click", function () {
-    helpAddLetter.disabled = true;
-    let randomLetter = word[Math.floor(Math.random() * word.length)]
-    if (word.includes(randomLetter)) {
-        for (let i = 0; i < word.length; i++) {
-            if (randomLetter === word[i]) {
-                wordVisual[i] = randomLetter
-                changeLetterVisual()
-                useLetter(randomLetter)
-            }
+
+/* Função de tornar as ajudas disabled para o jogador que não estã a jogar */
+/* function disableOtherHelp() {
+    if (turn === 1) {
+        document.querySelector("#helpAddLetterP2").disabled = true;
+        document.querySelector("#helpRemoveForcaP2").disabled = true;
+
+        if (funcHelpAddLetterP1(btnAddLetter).called = true) {
+            document.querySelector("#helpAddLetterP1").disabled = true;
+        } else {
+            document.querySelector("#helpAddLetterP1").disabled = false;
+        }
+
+        if (funcHelpRemoveForcaP1(btnRemoveForca).called) {
+            document.querySelector("#helpRemoveForcaP1").disabled = true
+        } else {
+            document.querySelector("#helpRemoveForcaP1").disabled = false
         }
     }
-})
 
-// Função ajuda de remover um elemento à forca
-helpRemoveForca.addEventListener("click", function () {
-    helpRemoveForca.disabled = true;
-    if (countForca >= 1) {
-        document.querySelector(".forca").src = `img/f${countForca = countForca -1}.png`
-    } else if (countForca < 1) {
-        helpRemoveForca.disabled = false
+    if (turn === -1) {
+        document.querySelector("#helpAddLetterP1").disabled = true;
+        document.querySelector("#helpRemoveForcaP1").disabled = true
+
+        if (funcHelpAddLetterP2(btnAddLetter).called = true) {
+            document.querySelector("#helpAddLetterP2").disabled = true;
+        } else {
+            document.querySelector("#helpAddLetterP2").disabled = false;
+        }
+
+        if (funcHelpRemoveForcaP2(btnRemoveForca).called) {
+            document.querySelector("#helpRemoveForcaP2").disabled = false
+        } else {
+            document.querySelector("#helpAddLetterP2").disabled = false;
+        }
     }
-}) */
+} */
 
 // Funções para botão voltar ao menu principal
 let mainMenuButton = document.getElementById("mainMenuButton")

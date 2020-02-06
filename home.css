@@ -23,13 +23,9 @@ button {
     height: 75px;
     padding: 10px;
     margin-left: 10%;
-    background:
-        /*orange*/
-        #b27214;
+    background: #b27214;
     border-radius: 50px;
-    border: 3px solid
-        /*orangered*/
-        #f7b239;
+    border: 3px solid #f7b239;
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -47,6 +43,7 @@ button:hover {
     transition: 0.5s ease-in-out;
     transform: translateY(-7px);
 }
-button:focus{
+
+button:focus {
     outline: 0;
 }
