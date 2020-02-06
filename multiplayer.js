@@ -15,7 +15,7 @@ let countForca = 0
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
 
-/* disableOtherHelp() */
+disableOtherHelp()
 
 // Botão ajuda letra
 let helpAddLetterP1 = document.querySelector("#helpAddLetterP1")
@@ -81,7 +81,7 @@ function useLetter(letter) {
         document.querySelector(".forca").src = `img/f${countForca}.png`
         turn = turn * -1
         changeTurnVisual()
-        /* disableOtherHelp() */
+        disableOtherHelp()
     }
 
     // Ativa modal do game over
@@ -232,41 +232,21 @@ function funcHelpRemoveForcaP2(btnRemoveForca) {
 }
 
 /* Função de tornar as ajudas disabled para o jogador que não estã a jogar */
-/* function disableOtherHelp() {
+function disableOtherHelp() {
     if (turn === 1) {
         document.querySelector("#helpAddLetterP2").disabled = true;
         document.querySelector("#helpRemoveForcaP2").disabled = true;
-
-        if (funcHelpAddLetterP1(btnAddLetter).called = true) {
-            document.querySelector("#helpAddLetterP1").disabled = true;
-        } else {
-            document.querySelector("#helpAddLetterP1").disabled = false;
-        }
-
-        if (funcHelpRemoveForcaP1(btnRemoveForca).called) {
-            document.querySelector("#helpRemoveForcaP1").disabled = true
-        } else {
-            document.querySelector("#helpRemoveForcaP1").disabled = false
-        }
+        document.querySelector("#helpAddLetterP1").disabled = false;
+        document.querySelector("#helpRemoveForcaP1").disabled = false
     }
 
     if (turn === -1) {
         document.querySelector("#helpAddLetterP1").disabled = true;
         document.querySelector("#helpRemoveForcaP1").disabled = true
-
-        if (funcHelpAddLetterP2(btnAddLetter).called = true) {
-            document.querySelector("#helpAddLetterP2").disabled = true;
-        } else {
-            document.querySelector("#helpAddLetterP2").disabled = false;
-        }
-
-        if (funcHelpRemoveForcaP2(btnRemoveForca).called) {
-            document.querySelector("#helpRemoveForcaP2").disabled = false
-        } else {
-            document.querySelector("#helpAddLetterP2").disabled = false;
-        }
+        document.querySelector("#helpAddLetterP2").disabled = false;
+        document.querySelector("#helpRemoveForcaP2").disabled = false
     }
-} */
+}
 
 // Funções para botão voltar ao menu principal
 let mainMenuButton = document.getElementById("mainMenuButton")
