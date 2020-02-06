@@ -15,9 +15,11 @@ let countForca = 0
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
 // Botão ajuda letra
-let helpAddLetter = document.querySelector(".helpAddLetter")
+let helpAddLetterP1 = document.querySelector("#helpAddLetterP1")
+let helpAddLetterP2 = document.querySelector("#helpAddLetterP2")
 // Botão ajuda forca
-let helpRemoveForca = document.querySelector(".helpRemoveForca")
+let helpRemoveForcaP1 = document.querySelector("#helpRemoveForcaP1")
+let helpRemoveForcaP2 = document.querySelector("#helpRemoveForcaP2")
 
 // Palavras PC
 const words = [{
@@ -159,7 +161,21 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 });
 
 // Função ajuda de adicionar uma letra à palavra
-helpAddLetter.addEventListener("click", function () {
+
+if (turn === 1) {
+    helpAddLetterP2.disabled = true
+    helpRemoveForcaP2.disabled = true
+    helpAddLetterP1.disabled = false
+    helpRemoveForcaP1.disabled = false
+}
+if (turn === -1) {
+    helpAddLetterP1.disabled = true
+    helpRemoveForcaP1.disabled = true
+    helpAddLetterP2.disabled = false
+    helpRemoveForcaP2.disabled = false
+}
+
+/* helpAddLetter.addEventListener("click", function () {
     helpAddLetter.disabled = true;
     let randomLetter = word[Math.floor(Math.random() * word.length)]
     if (word.includes(randomLetter)) {
@@ -181,7 +197,7 @@ helpRemoveForca.addEventListener("click", function () {
     } else if (countForca < 1) {
         helpRemoveForca.disabled = false
     }
-})
+}) */
 
 // Funções para botão voltar ao menu principal
 let mainMenuButton = document.getElementById("mainMenuButton")
@@ -222,3 +238,5 @@ function addRanking() {
 
     localStorage.setItem("ranking", JSON.stringify(ranking))
 }
+
+document.querySelector(".social_media_git").innerHTML = '<img src="https://evofabrics.com/wp-content/uploads/2020/02/issuu_icon.png" style="height: 33px; width: 33px;">'
