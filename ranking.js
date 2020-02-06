@@ -12,16 +12,18 @@ ranking.sort(
 
 // Iterar sobre array ranking ordenado
 let order = 0
-orderScores()
 
-function orderScores() {
 
     for (let i = 0; i < ranking.length; i++) {
 
-        if (ranking[i].score === (ranking[i].score)) {
-            document.querySelector("#tableRanking").innerHTML += `<tr><td class="orderRanking">${order += 1}º</td><td class="rankingNames">${ranking[i].name}</td><td class="rankingScores">${ranking[i].score}</td></tr>`
-        } else if (ranking[i].score === (ranking[i].score - 1)) {
-            document.querySelector("#tableRanking").innerHTML += `<tr><td class="orderRanking">${order += 0}º</td><td class="rankingNames">${ranking[i].name}</td><td class="rankingScores">${ranking[i].score}</td></tr>`
-        }
+        document.querySelector("#tableRanking").innerHTML += `<tr id="line${i}"><td class="orderRanking" id="order${i}">${order += 1}º</td><td class="rankingNames" id="name${i}">${ranking[i].name}</td><td class="rankingScores" id="score${i}">${ranking[i].score}</td></tr>`
+
     }
-}
+
+    for (let i = 1; i < ranking.length; i++) {
+        if (document.querySelector(`#score${i}`).textContent === document.querySelector(`#score${i-1}`).textContent) {
+            document.querySelector(`#order${i}`).innerHTML = ""
+            document.querySelector(`#order${i-1}`).classList.add("sameScore")
+        }
+        
+    }
