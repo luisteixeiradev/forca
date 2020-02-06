@@ -170,13 +170,13 @@ function funcHelpAddLetterP1(btnAddLetter) {
     if (word.includes(randomLetter)) {
         for (let i = 0; i < word.length; i++) {
             if (randomLetter !== (wordVisual[i])) {
-                if (randomLetter === word[i]) {
+                if ((randomLetter === word[i]) && (randomLetter !== wordVisual[i])) {
                     wordVisual[i] = randomLetter
                     changeLetterVisual()
                     useLetter(randomLetter)
+                } else if (randomLetter === wordVisual[i]) {
+                    funcHelpAddLetterP1(btnAddLetter)
                 }
-            } else if (randomLetter === wordVisual[i]) {
-                funcHelpAddLetterP1(btnAddLetter)
             }
         }
     }
@@ -190,14 +190,14 @@ function funcHelpAddLetterP2(btnAddLetter) {
 
     if (word.includes(randomLetter)) {
         for (let i = 0; i < word.length; i++) {
-            if (randomLetter !== wordVisual[i]) {
+            if (randomLetter !== (wordVisual[i])) {
                 if (randomLetter === word[i]) {
                     wordVisual[i] = randomLetter
                     changeLetterVisual()
                     useLetter(randomLetter)
+                } else if (randomLetter === wordVisual[i]) {
+                    funcHelpAddLetterP2(btnAddLetter)
                 }
-            } else if (randomLetter === wordVisual[i]) {
-                funcHelpAddLetterP2(btnAddLetter)
             }
         }
     }
