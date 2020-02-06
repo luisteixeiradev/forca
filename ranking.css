@@ -21,8 +21,37 @@ body {
 
 /* Grelha para ranking */
 .grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100%;
+    width: 100%;
+}
+
+.headerSizeFirst {
+    width: 10%;
+}
+
+/* Centrar headers da tabela */
+.headerSize {
+    width: 45%;
+    color: lightgreen;
+}
+
+.headerSizeFirst,
+.rankingNames,
+.rankingScores {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+table td,
+th {
+    border: 1px solid black;
 }

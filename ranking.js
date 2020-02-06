@@ -9,7 +9,19 @@ ranking.sort(
     }
 )
 
+
 // Iterar sobre array ranking ordenado
-for (const entry of ranking) {
-    document.querySelector("#tableRanking").innerHTML += `<tr><td>${entry.name}</td><td>${entry.score}</td></tr>`
+let order = 0
+orderScores()
+
+function orderScores() {
+
+    for (let i = 0; i < ranking.length; i++) {
+
+        if (ranking[i].score === (ranking[i].score)) {
+            document.querySelector("#tableRanking").innerHTML += `<tr><td class="orderRanking">${order += 1}º</td><td class="rankingNames">${ranking[i].name}</td><td class="rankingScores">${ranking[i].score}</td></tr>`
+        } else if (ranking[i].score === (ranking[i].score - 1)) {
+            document.querySelector("#tableRanking").innerHTML += `<tr><td class="orderRanking">${order += 0}º</td><td class="rankingNames">${ranking[i].name}</td><td class="rankingScores">${ranking[i].score}</td></tr>`
+        }
+    }
 }
