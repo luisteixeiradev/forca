@@ -162,20 +162,58 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 });
 
 // Função ajuda de adicionar uma letra à palavra
+function funcHelpAddLetterP1(btnAddLetter) {
 
-function helpAddLetter(btnAddLetter) {
     document.querySelector(btnAddLetter).disabled = true
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
-    do {
-        randomLetter = word[Math.floor(Math.random() * word.length)]
-        useLetter(randomLetter)
-    } while (wordVisual.includes(randomLetter));
+    if (word.includes(randomLetter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (randomLetter !== (wordVisual[i])) {
+                if (randomLetter === word[i]) {
+                    wordVisual[i] = randomLetter
+                    changeLetterVisual()
+                    useLetter(randomLetter)
+                }
+            } else if (randomLetter === wordVisual[i]) {
+                funcHelpAddLetterP1(btnAddLetter)
+            }
+        }
+    }
 }
+
+// Função ajuda de adicionar uma letra à palavra
+function funcHelpAddLetterP2(btnAddLetter) {
+
+    document.querySelector(btnAddLetter).disabled = true
+    let randomLetter = word[Math.floor(Math.random() * word.length)]
+
+    if (word.includes(randomLetter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (randomLetter !== wordVisual[i]) {
+                if (randomLetter === word[i]) {
+                    wordVisual[i] = randomLetter
+                    changeLetterVisual()
+                    useLetter(randomLetter)
+                }
+            } else if (randomLetter === wordVisual[i]) {
+                funcHelpAddLetterP2(btnAddLetter)
+            }
+        }
+    }
+}
+
 // Função ajuda de remover um elemento à forca
+function funcHelpRemoveForcaP1(btnRemoveForca) {
+    if (countForca > 0) {
+        countForca = countForca - 1
+        document.querySelector(".forca").src = `img/f${countForca}.png`
+        document.querySelector(btnRemoveForca).disabled = true
+    }
+}
 
-function helpRemoveForca(btnRemoveForca) {
-
+// Função ajuda de remover um elemento à forca
+function funcHRemoveForcaP2(btnRemoveForca) {
     if (countForca > 0) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
