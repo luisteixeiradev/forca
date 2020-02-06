@@ -166,7 +166,7 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 function helpAddLetter(btnAddLetter) {
     document.querySelector(btnAddLetter).disabled = true
     let randomLetter = word[Math.floor(Math.random() * word.length)]
-    
+
     do {
         randomLetter = word[Math.floor(Math.random() * word.length)]
         useLetter(randomLetter)
