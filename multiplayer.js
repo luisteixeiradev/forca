@@ -162,19 +162,26 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 });
 
 // Função ajuda de adicionar uma letra à palavra
-if (turn === 1) {
-    helpAddLetterP2.disabled = true
-    helpRemoveForcaP2.disabled = true
-    helpAddLetterP1.disabled = false
-    helpRemoveForcaP1.disabled = false
-}
-if (turn === -1) {
-    helpAddLetterP1.disabled = true
-    helpRemoveForcaP1.disabled = true
-    helpAddLetterP2.disabled = false
-    helpRemoveForcaP2.disabled = false
-}
 
+function helpAddLetter(btnAddLetter) {
+    document.querySelector(btnAddLetter).disabled = true
+    let randomLetter = word[Math.floor(Math.random() * word.length)]
+    
+    do {
+        randomLetter = word[Math.floor(Math.random() * word.length)]
+        useLetter(randomLetter)
+    } while (wordVisual.includes(randomLetter));
+}
+// Função ajuda de remover um elemento à forca
+
+function helpRemoveForca(btnRemoveForca) {
+
+    if (countForca > 0) {
+        countForca = countForca - 1
+        document.querySelector(".forca").src = `img/f${countForca}.png`
+        document.querySelector(btnRemoveForca).disabled = true
+    }
+}
 /* helpAddLetter.addEventListener("click", function () {
     helpAddLetter.disabled = true;
     let randomLetter = word[Math.floor(Math.random() * word.length)]
