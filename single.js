@@ -114,16 +114,22 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 });
 
 // Função ajuda de adicionar uma letra à palavra
-helpAddLetter.addEventListener("click", function () {
-    helpAddLetter.disabled = true;
+helpAddLetter.addEventListener("click", function helpAddLetter() {
+    document.querySelector(".helpAddLetter").disabled = true;
     let randomLetter = word[Math.floor(Math.random() * word.length)]
+
     if (word.includes(randomLetter)) {
-        for (let i = 0; i < word.length; i++) {
-            if (randomLetter === word[i]) {
-                wordVisual[i] = randomLetter
-                changeLetterVisual()
-                useLetter(randomLetter)
+
+        if (!wordVisual.includes(randomLetter)) {
+            for (let i = 0; i < word.length; i++) {
+                if (randomLetter === word[i]) {
+                    wordVisual[i] = randomLetter
+                    changeLetterVisual()
+                    useLetter(randomLetter)
+                }
             }
+        } else if (wordVisual.includes(randomLetter)) {
+            helpAddLetter()
         }
     }
 })
