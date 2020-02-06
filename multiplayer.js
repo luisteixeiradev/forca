@@ -14,6 +14,7 @@ let countForca = 0
 // Contador de turno e indicação visual dos turnos
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
+
 // Botão ajuda letra
 let helpAddLetterP1 = document.querySelector("#helpAddLetterP1")
 let helpAddLetterP2 = document.querySelector("#helpAddLetterP2")
@@ -161,7 +162,6 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
 });
 
 // Função ajuda de adicionar uma letra à palavra
-
 if (turn === 1) {
     helpAddLetterP2.disabled = true
     helpRemoveForcaP2.disabled = true
@@ -209,15 +209,13 @@ mainMenuButtonDif.addEventListener("click", function () {
     location.href = "index.html"
 })
 
-//Função do Ranking
-
+// Função do Ranking
 function addRanking() {
 
     let ranking = JSON.parse(localStorage.getItem("ranking")) || []
 
     let currentPlayer = null
-    console.log(turn);
-    
+
     if (turn === 1) currentPlayer = playerName1
     if (turn === -1) currentPlayer = playerName2
 
@@ -226,7 +224,7 @@ function addRanking() {
         if (obj.name === currentPlayer) {
             obj.score += 1
             isUpdated = true
-        } 
+        }
     })
 
     if (isUpdated === false) {
@@ -235,8 +233,5 @@ function addRanking() {
             "score": 1
         })
     }
-
     localStorage.setItem("ranking", JSON.stringify(ranking))
 }
-
-document.querySelector(".social_media_git").innerHTML = '<img src="https://evofabrics.com/wp-content/uploads/2020/02/issuu_icon.png" style="height: 33px; width: 33px;">'
