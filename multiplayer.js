@@ -24,7 +24,7 @@ disableOtherHelp()
 
 let ranking = JSON.parse(localStorage.getItem("ranking")) || []
 
-for (let i = 1; i < ranking.length; i++) {
+for (let i = 0; i < ranking.length; i++) {
     document.querySelector(`#names`).innerHTML += `<option value="${ranking[i].name}"></option>`
 }
 

@@ -55,6 +55,8 @@ body {
 table {
     border-collapse: collapse;
     border-style: hidden;
+    width: 80%;
+    margin: auto;
 }
 
 /* Grelhas da tabela */
