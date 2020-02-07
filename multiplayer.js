@@ -163,10 +163,16 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
     location.reload()
 });
 
+let helpAddLetterP1 = true
+let helpAddLetterP2 = true
+let helpRemoveForcaP1 = true
+let helpRemoveForcaP2 = true
+
 // Função ajuda de adicionar uma letra à palavra jogador 1
 function funcHelpAddLetterP1(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    helpAddLetterP1 = false
     document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
 
     let randomLetter = word[Math.floor(Math.random() * word.length)]
@@ -191,6 +197,7 @@ function funcHelpAddLetterP1(btnAddLetter) {
 function funcHelpAddLetterP2(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    helpAddLetterP2 = false
     document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
 
     let randomLetter = word[Math.floor(Math.random() * word.length)]
@@ -217,6 +224,7 @@ function funcHelpRemoveForcaP1(btnRemoveForca) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        helpRemoveForcaP1 = false
         document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
@@ -227,6 +235,7 @@ function funcHelpRemoveForcaP2(btnRemoveForca) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        helpRemoveForcaP2 = false
         document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
