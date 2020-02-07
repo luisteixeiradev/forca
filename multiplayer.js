@@ -30,12 +30,16 @@ for (let i = 0; i < ranking.length; i++) {
 
 // Palavras PC
 const words = [{
-        category: 'frameworks',
-        items: ['ionic', 'angular', 'react']
+        category: 'animais',
+        items: ['anaconda', 'andorinha', 'crocodilo', 'elefante', 'lagosta', 'golfinho', 'hamster', 'mosquito', 'papagaio', 'pinguim', 'rinoceronte', 'tartaruga', 'zebra']
     },
     {
         category: 'linguagens de programação',
-        items: ['javascript', 'swift', 'perl', 'sql', 'java', 'python', 'actionscript', 'pascal', 'php', 'euphoria', 'lua', 'matlab', 'rubi']
+        items: ['javascript', 'swift', 'python', 'erlang', 'actionscript', 'pascal', 'euphoria', 'matlab']
+    },
+    {
+        category: 'países',
+        items: ['portugal', 'espanha', 'alemanha', 'dinamarca', 'luxemburgo', 'noruega', 'qatar', 'hungria']
     }
 ]
 
