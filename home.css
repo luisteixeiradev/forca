@@ -1,9 +1,11 @@
+/* Background */
 body {
     margin: 0;
     padding: 10px;
     background: gray;
 }
 
+/* Background */
 .content {
     width: 65%;
     background: gray;
@@ -12,12 +14,14 @@ body {
     padding: 20px 0;
 }
 
+/* Logo */
 .logo {
     width: 20%;
     margin-left: 40%;
     margin-bottom: 10px;
 }
 
+/* Botões do home */
 .buttonHome {
     width: 80%;
     height: 75px;
@@ -34,16 +38,16 @@ body {
     color: white;
 }
 
-.buttonHome:hover {	
-    background: white;	
-    color:	
-        /*black*/	
-        #b27214;	
-    font-size: 22.5px;	
-    transition: 0.5s ease-in-out;	
-    transform: translateY(-7px);	
+/* Botões ao dar hover */
+.buttonHome:hover {
+    background: white;
+    color: #b27214;
+    font-size: 22.5px;
+    transition: 0.5s ease-in-out;
+    transform: translateY(-7px);
 }
 
+/* Botões on focus */
 button:focus {
     outline: 0;
 }

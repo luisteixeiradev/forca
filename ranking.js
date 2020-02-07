@@ -9,7 +9,6 @@ ranking.sort(
     }
 )
 
-
 // Iterar sobre array ranking ordenado
 let order = 0
 for (let i = 0; i < ranking.length; i++) {

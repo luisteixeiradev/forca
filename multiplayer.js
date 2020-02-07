@@ -14,7 +14,12 @@ let countForca = 0
 // Contador de turno e indicação visual dos turnos
 let turn = 1
 document.querySelector(".left").style = "border: solid green 5px; border-radius: 5px";
-
+// Variáveis para desativar ajudas
+let helpAddLetterP1 = 1
+let helpAddLetterP2 = 1
+let helpRemoveForcaP1 = 1
+let helpRemoveForcaP2 = 1
+// Desativar ajudas do jogador 2 ao começar o jogo
 disableOtherHelp()
 
 // Palavras PC
@@ -158,11 +163,6 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
     location.reload()
 });
 
-let helpAddLetterP1 = 1
-let helpAddLetterP2 = 1
-let helpRemoveForcaP1 = 1
-let helpRemoveForcaP2 = 1
-
 // Função ajuda de adicionar uma letra à palavra jogador 1
 function funcHelpAddLetterP1(btnAddLetter) {
 
@@ -173,7 +173,6 @@ function funcHelpAddLetterP1(btnAddLetter) {
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
     if (word.includes(randomLetter)) {
-
         if (!wordVisual.includes(randomLetter)) {
             for (let i = 0; i < word.length; i++) {
                 if (randomLetter === word[i]) {
@@ -198,7 +197,6 @@ function funcHelpAddLetterP2(btnAddLetter) {
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
     if (word.includes(randomLetter)) {
-
         if (!wordVisual.includes(randomLetter)) {
             for (let i = 0; i < word.length; i++) {
                 if (randomLetter === word[i]) {
@@ -235,49 +233,40 @@ function funcHelpRemoveForcaP2(btnRemoveForca) {
     }
 }
 
-/* Função de tornar as ajudas disabled para o jogador que não estã a jogar */
+// Função de tornar as ajudas disabled para o jogador que não estã a jogar
 function disableOtherHelp() {
     if (turn === 1) {
         document.querySelector("#helpAddLetterP2").disabled = true;
         document.querySelector("#helpRemoveForcaP2").disabled = true;
         document.querySelector("#helpAddLetterP1").disabled = false;
         document.querySelector("#helpRemoveForcaP1").disabled = false;
-
     }
-
     if (turn === -1) {
         document.querySelector("#helpAddLetterP1").disabled = true;
         document.querySelector("#helpRemoveForcaP1").disabled = true;
         document.querySelector("#helpAddLetterP2").disabled = false;
         document.querySelector("#helpRemoveForcaP2").disabled = false;
-        
     }
 }
 
+// Função de tornar as ajudar disabled para o jogador que não está a jogar
 function helpTurn1() {
     if (turn === 1 && helpAddLetterP1 === 2) {
         document.querySelector("#helpAddLetterP1").disabled = true;
-    } /* else {
-        document.querySelector("#helpAddLetterP1").disabled = false;
-    } */
+    }
     if (turn === 1 && helpRemoveForcaP1 === 2) {
         document.querySelector("#helpRemoveForcaP1").disabled = true;
-    } /* else {
-        document.querySelector("#helpRemoveForcaP1").disabled = false;
-    } */
+    }
 }
 
+// Função de tornar as ajudar disabled para o jogador que não está a jogar
 function helpTurn2() {
     if (turn === -1 && helpAddLetterP2 === 2) {
         document.querySelector("#helpAddLetterP2").disabled = true;
-    } /* else {
-        document.querySelector("#helpAddLetterP2").disabled = false;
-    } */
+    }
     if (turn === 1 && helpRemoveForcaP2 === 2) {
         document.querySelector("#helpRemoveForcaP2").disabled = true;
-    }/*  else {
-        document.querySelector("#helpRemoveForcaP2").disabled = false;
-    } */
+    }
 }
 
 // Funções para botão voltar ao menu principal
@@ -292,11 +281,9 @@ mainMenuButtonDif.addEventListener("click", function () {
 
 // Função do Ranking
 function addRanking() {
-
     let ranking = JSON.parse(localStorage.getItem("ranking")) || []
 
     let currentPlayer = null
-
     if (turn === 1) currentPlayer = playerName1
     if (turn === -1) currentPlayer = playerName2
 

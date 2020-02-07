@@ -1,4 +1,5 @@
 // Variáveis globais
+
 // Máximo tentativas de letra
 const MAX_FORCA = 6
 // Palavra escolhida
@@ -119,7 +120,6 @@ helpAddLetter.addEventListener("click", function helpAddLetter() {
     let randomLetter = word[Math.floor(Math.random() * word.length)]
 
     if (word.includes(randomLetter)) {
-
         if (!wordVisual.includes(randomLetter)) {
             for (let i = 0; i < word.length; i++) {
                 if (randomLetter === word[i]) {
