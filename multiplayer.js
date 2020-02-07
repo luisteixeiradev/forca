@@ -143,7 +143,7 @@ document.querySelector(".forca").src = `img/f${countForca}.png`
 // Função escolher nomes dos jogadores
 function startGame() {
     if (document.querySelector('#inputName1').value === "" || document.querySelector('#inputName2').value === "") {
-        alert("Por Favor Escolhe o Teu Nome!")
+        document.querySelector("#modalInsertName").style.display = "block"
     } else {
         document.querySelector("#modalNames").style.display = "none"
         playerName1 = document.querySelector("#inputName1").value.toUpperCase()
@@ -152,6 +152,13 @@ function startGame() {
         document.querySelector(".rightP").innerHTML = playerName2
     }
 }
+
+document.querySelector("#closeModalNames").addEventListener("click", closeModalNames)
+
+function closeModalNames() {
+    document.querySelector("#modalInsertName").style.display = "none"
+}
+
 document.querySelector(".btnInputNames").addEventListener("click", startGame);
 
 // Função para trocar visual dos turnos

@@ -172,6 +172,21 @@ body {
     font-size: xxx-large;
 }
 
+#modalInsertName{
+    display: none;
+    padding-top: 15%;
+}
+
+#modalInsertName > .modal-content {
+    width: 55%;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 20px;
+  }
+
 /* Menu escolher jogadores */
 .modal-content {
     background-color: #b27214;
