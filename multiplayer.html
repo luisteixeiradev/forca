@@ -12,7 +12,7 @@
 
 <body>
 
-    <button class="btnBack" onclick="window.history.back()"><i class="fas fa-arrow-left"></i></button>
+    <a href="index.html"><button class="btnBack"><i class="fas fa-arrow-left"></i></button></a>
 
     <!-- Estruturação do jogo no body -->
     <div class="grid">
@@ -55,11 +55,15 @@
             <p>Nome dos jogadores</p>
             <div class="namePlayers">
                 <label id="player1">Jogador 1</label>
-                <input type="text" name="" class="inputNames" id="inputName1">
+                <input type="text" name="" list="names" class="inputNames" id="inputName1">
+                    <datalist id="names">
+                    </datalist>
             </div>
             <div class="namePlayers">
                 <label id="player2">Jogador 2</label>
-                <input type="text" name="" class="inputNames" id="inputName2">
+                <input type="text" name="" list="names" class="inputNames" id="inputName2">
+                <datalist id="names">
+                </datalist>
             </div>
             <button class="btnInputNames">Jogar</button>
         </div>

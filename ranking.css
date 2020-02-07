@@ -93,6 +93,12 @@ th {
     position: fixed;
 }
 
+.btnBack:hover {
+    background: white;
+    color: #b27214;
+    transition: 0.5s ease-in-out;
+}
+
 /* Botão */
 button {
     outline: none;
