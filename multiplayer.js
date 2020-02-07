@@ -240,40 +240,44 @@ function disableOtherHelp() {
     if (turn === 1) {
         document.querySelector("#helpAddLetterP2").disabled = true;
         document.querySelector("#helpRemoveForcaP2").disabled = true;
+        document.querySelector("#helpAddLetterP1").disabled = false;
+        document.querySelector("#helpRemoveForcaP1").disabled = false;
 
     }
 
     if (turn === -1) {
         document.querySelector("#helpAddLetterP1").disabled = true;
         document.querySelector("#helpRemoveForcaP1").disabled = true;
+        document.querySelector("#helpAddLetterP2").disabled = false;
+        document.querySelector("#helpRemoveForcaP2").disabled = false;
         
     }
 }
 
 function helpTurn1() {
-    if (helpAddLetterP1 === 2) {
+    if (turn = 1 && helpAddLetterP1 === 2) {
         document.querySelector("#helpAddLetterP1").disabled = true;
-    } else {
+    } /* else {
         document.querySelector("#helpAddLetterP1").disabled = false;
-    }
-    if (helpRemoveForcaP1 === 2) {
+    } */
+    if (turn = 1 && helpRemoveForcaP1 === 2) {
         document.querySelector("#helpRemoveForcaP1").disabled = true;
-    } else {
+    } /* else {
         document.querySelector("#helpRemoveForcaP1").disabled = false;
-    }
+    } */
 }
 
 function helpTurn2() {
-    if (helpAddLetterP2 === 2) {
+    if (turn = -1 && helpAddLetterP2 === 2) {
         document.querySelector("#helpAddLetterP2").disabled = true;
-    } else {
+    } /* else {
         document.querySelector("#helpAddLetterP2").disabled = false;
-    }
-    if (helpRemoveForcaP2 === 2) {
+    } */
+    if (turn = 1 && helpRemoveForcaP2 === 2) {
         document.querySelector("#helpRemoveForcaP2").disabled = true;
-    } else {
+    }/*  else {
         document.querySelector("#helpRemoveForcaP2").disabled = false;
-    }
+    } */
 }
 
 // Funções para botão voltar ao menu principal
