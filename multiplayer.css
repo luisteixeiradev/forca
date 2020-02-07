@@ -172,12 +172,12 @@ body {
     font-size: xxx-large;
 }
 
-#modalInsertName{
+#modalInsertName {
     display: none;
     padding-top: 15%;
 }
 
-#modalInsertName > .modal-content {
+#modalInsertName>.modal-content {
     width: 55%;
 }
 
@@ -185,7 +185,7 @@ body {
     color: white;
     float: right;
     font-size: 20px;
-  }
+}
 
 /* Menu escolher jogadores */
 .modal-content {
@@ -423,6 +423,7 @@ body {
     position: fixed;
 }
 
+/* Botão ao dar hover */
 .btnBack:hover {
     background: white;
     color: #b27214;

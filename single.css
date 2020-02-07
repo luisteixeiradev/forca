@@ -363,6 +363,7 @@ body {
     position: fixed;
 }
 
+/* Botão back ao dar hover */
 .btnBack:hover {
     background: white;
     color: #b27214;

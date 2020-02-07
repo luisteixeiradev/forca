@@ -22,6 +22,7 @@ let helpRemoveForcaP2 = 1
 // Desativar ajudas do jogador 2 ao começar o jogo
 disableOtherHelp()
 
+// Ranking
 let ranking = JSON.parse(localStorage.getItem("ranking")) || []
 
 for (let i = 0; i < ranking.length; i++) {
@@ -152,14 +153,14 @@ function startGame() {
         document.querySelector(".rightP").innerHTML = playerName2
     }
 }
+document.querySelector(".btnInputNames").addEventListener("click", startGame);
 
+// Botão fechar modal de quando um jogador não insere o seu nome
 document.querySelector("#closeModalNames").addEventListener("click", closeModalNames)
 
 function closeModalNames() {
     document.querySelector("#modalInsertName").style.display = "none"
 }
-
-document.querySelector(".btnInputNames").addEventListener("click", startGame);
 
 // Função para trocar visual dos turnos
 function changeTurnVisual() {
