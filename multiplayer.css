@@ -408,3 +408,26 @@ body {
 #winnerDif {
     color: lightgreen;
 }
+
+.btnBack {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #b27214;
+    border-radius: 7.5px;
+    border: 3px solid #f7b239;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 20px black;
+    font-family: 'Exo', sans-serif;
+    color: white;
+    z-index: 2;
+    position: fixed;
+}
+
+button{
+    outline: none;
+}
