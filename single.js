@@ -17,17 +17,17 @@ document.querySelector(".left").style = "border: solid green 5px; border-radius:
 
 // Palavras PC
 const words = [{
-    category: 'animais',
-    items: ['anaconda', 'andorinha', 'crocodilo', 'elefante', 'lagosta', 'golfinho', 'hamster', 'mosquito', 'papagaio', 'pinguim', 'rinoceronte', 'tartaruga', 'zebra']
-},
-{
-    category: 'linguagens de programação',
-    items: ['javascript', 'swift', 'python', 'erlang', 'actionscript', 'pascal', 'euphoria', 'matlab']
-},
-{
-    category: 'países',
-    items: ['portugal', 'espanha', 'alemanha', 'dinamarca', 'luxemburgo', 'noruega', 'qatar', 'hungria']
-}
+        category: 'animais',
+        items: ['anaconda', 'andorinha', 'crocodilo', 'elefante', 'lagosta', 'golfinho', 'hamster', 'mosquito', 'papagaio', 'pinguim', 'rinoceronte', 'tartaruga', 'zebra']
+    },
+    {
+        category: 'linguagens de programação',
+        items: ['javascript', 'swift', 'python', 'erlang', 'actionscript', 'pascal', 'euphoria', 'matlab']
+    },
+    {
+        category: 'países',
+        items: ['portugal', 'espanha', 'alemanha', 'dinamarca', 'luxemburgo', 'noruega', 'qatar', 'hungria']
+    }
 ]
 
 // Teclado
