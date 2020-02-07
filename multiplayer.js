@@ -17,13 +17,6 @@ document.querySelector(".left").style = "border: solid green 5px; border-radius:
 
 disableOtherHelp()
 
-// Botão ajuda letra
-let helpAddLetterP1 = document.querySelector("#helpAddLetterP1")
-let helpAddLetterP2 = document.querySelector("#helpAddLetterP2")
-// Botão ajuda forca
-let helpRemoveForcaP1 = document.querySelector("#helpRemoveForcaP1")
-let helpRemoveForcaP2 = document.querySelector("#helpRemoveForcaP2")
-
 // Palavras PC
 const words = [{
         category: 'frameworks',
@@ -82,6 +75,8 @@ function useLetter(letter) {
         turn = turn * -1
         changeTurnVisual()
         disableOtherHelp()
+        helpTurn1()
+        helpTurn2()
     }
 
     // Ativa modal do game over
@@ -163,10 +158,16 @@ document.querySelector("#playAgainDif").addEventListener("click", function () {
     location.reload()
 });
 
+let helpAddLetterP1 = 1
+let helpAddLetterP2 = 1
+let helpRemoveForcaP1 = 1
+let helpRemoveForcaP2 = 1
+
 // Função ajuda de adicionar uma letra à palavra jogador 1
 function funcHelpAddLetterP1(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    helpAddLetterP1 = 2
     document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
 
     let randomLetter = word[Math.floor(Math.random() * word.length)]
@@ -191,6 +192,7 @@ function funcHelpAddLetterP1(btnAddLetter) {
 function funcHelpAddLetterP2(btnAddLetter) {
 
     document.querySelector(btnAddLetter).disabled = true
+    helpAddLetterP2 = 2
     document.querySelector(btnAddLetter).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
 
     let randomLetter = word[Math.floor(Math.random() * word.length)]
@@ -217,6 +219,7 @@ function funcHelpRemoveForcaP1(btnRemoveForca) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        helpRemoveForcaP1 = 2
         document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
@@ -227,6 +230,7 @@ function funcHelpRemoveForcaP2(btnRemoveForca) {
         countForca = countForca - 1
         document.querySelector(".forca").src = `img/f${countForca}.png`
         document.querySelector(btnRemoveForca).disabled = true
+        helpRemoveForcaP2 = 2
         document.querySelector(btnRemoveForca).style = "background: red; color: #fff; font-size: 12.5px; margin-left: 12.5px; margin-right: 12.5px; transition: 0.5s ease-in-out;"
     }
 }
@@ -236,15 +240,39 @@ function disableOtherHelp() {
     if (turn === 1) {
         document.querySelector("#helpAddLetterP2").disabled = true;
         document.querySelector("#helpRemoveForcaP2").disabled = true;
-        document.querySelector("#helpAddLetterP1").disabled = false;
-        document.querySelector("#helpRemoveForcaP1").disabled = false
+
     }
 
     if (turn === -1) {
         document.querySelector("#helpAddLetterP1").disabled = true;
-        document.querySelector("#helpRemoveForcaP1").disabled = true
+        document.querySelector("#helpRemoveForcaP1").disabled = true;
+        
+    }
+}
+
+function helpTurn1() {
+    if (helpAddLetterP1 === 2) {
+        document.querySelector("#helpAddLetterP1").disabled = true;
+    } else {
+        document.querySelector("#helpAddLetterP1").disabled = false;
+    }
+    if (helpRemoveForcaP1 === 2) {
+        document.querySelector("#helpRemoveForcaP1").disabled = true;
+    } else {
+        document.querySelector("#helpRemoveForcaP1").disabled = false;
+    }
+}
+
+function helpTurn2() {
+    if (helpAddLetterP2 === 2) {
+        document.querySelector("#helpAddLetterP2").disabled = true;
+    } else {
         document.querySelector("#helpAddLetterP2").disabled = false;
-        document.querySelector("#helpRemoveForcaP2").disabled = false
+    }
+    if (helpRemoveForcaP2 === 2) {
+        document.querySelector("#helpRemoveForcaP2").disabled = true;
+    } else {
+        document.querySelector("#helpRemoveForcaP2").disabled = false;
     }
 }
 
