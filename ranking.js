@@ -21,5 +21,7 @@ for (let i = 1; i < ranking.length; i++) {
     if (document.querySelector(`#score${i}`).textContent === document.querySelector(`#score${i-1}`).textContent) {
         document.querySelector(`#order${i}`).innerHTML = ""
         document.querySelector(`#order${i-1}`).classList.add("sameScore")
+        document.querySelector(`#name${i-1}`).classList.add("sameScore")
+        document.querySelector(`#score${i-1}`).classList.add("sameScore")
     }
 }

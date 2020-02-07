@@ -101,6 +101,15 @@ th {
     transition: 0.5s ease-in-out;
 }
 
+.titleTable{
+    text-align: center;
+}
+
+table td,
+th {
+    border-right: 1px solid transparent;
+}
+
 /* Botão */
 button {
     outline: none;
