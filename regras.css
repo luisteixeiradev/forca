@@ -76,6 +76,33 @@ body {
     transition: 0.5s ease-in-out;
 }
 
+.titleTable{
+    text-align: center;
+}
+
+table td,
+th {
+    border-right: 1px solid transparent;
+}
+
+.tdTitleTable{
+    border-bottom: 1px solid transparent;
+}
+
+/* Tabela */
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+    width: 80%;
+    margin: auto;
+}
+
+/* Grelhas da tabela */
+table td,
+th {
+    border: 1px solid black;
+}
+
 /* Botão */
 button {
     outline: none;
