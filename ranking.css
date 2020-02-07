@@ -110,6 +110,10 @@ th {
     border-right: 1px solid transparent;
 }
 
+.tdTitleTable{
+    border-bottom: 1px solid transparent;
+}
+
 /* Botão */
 button {
     outline: none;
