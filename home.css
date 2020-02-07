@@ -34,16 +34,6 @@ button {
     color: white;
 }
 
-button:hover {
-    background: white;
-    color:
-        /*black*/
-        #b27214;
-    font-size: 22.5px;
-    transition: 0.5s ease-in-out;
-    transform: translateY(-7px);
-}
-
 button:focus {
     outline: 0;
 }
