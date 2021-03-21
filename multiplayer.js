@@ -67,7 +67,7 @@ function randomWordAndCategory() {
 }
 randomWordAndCategory()
 
-// Lójica da parte jogável
+// Lógica da parte jogável
 function useLetter(letter) {
 
     // Quando user clica numa letra, desativa essa letra
@@ -101,6 +101,7 @@ function useLetter(letter) {
         document.querySelector("#modalGameOver").style.display = "block"
         document.querySelector(".right").style = "none"
         document.querySelector(".left").style = "none"
+        addRanking()
     }
 
     // Ativa modal da vitória em caso das letras estarem todas selecionadas
